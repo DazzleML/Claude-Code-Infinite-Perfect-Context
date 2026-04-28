@@ -1,4 +1,4 @@
-"""Shared test fixtures for $PROJECT_NAME."""
+"""Shared test fixtures for Claude-Code-Infinite-Perfect-Context."""
 
 import pytest
 from pathlib import Path

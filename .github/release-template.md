@@ -20,13 +20,13 @@
 ## Installation
 
 ```bash
-pip install $PACKAGE_NAME
+pip install Claude_Code_Infinite_Perfect_Context
 ```
 
 ### From Source
 ```bash
-git clone https://github.com/$GITHUB_ORG/$PROJECT_NAME.git
-cd $PROJECT_NAME
+git clone https://github.com/DazzleML/Claude-Code-Infinite-Perfect-Context.git
+cd Claude-Code-Infinite-Perfect-Context
 pip install -e .
 ```
 

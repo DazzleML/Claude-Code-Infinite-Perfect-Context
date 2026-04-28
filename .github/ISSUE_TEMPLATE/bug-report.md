@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help improve $PROJECT_NAME
+about: Create a report to help improve Claude-Code-Infinite-Perfect-Context
 title: "[BUG] "
 labels: bug
 assignees: ''
