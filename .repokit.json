@@ -6,9 +6,9 @@
   "language": "python",
   "branch_strategy": "minimal",
   "private_branch": "private",
-  "description": "A new project created from git-repokit-template",
+  "description": "Reverse compaction for Claude Code: search past conversation turns and auto-fork into them with full pre-compaction fidelity.",
   "author": {
     "name": "djdarcy",
-    "email": "djdarcy@users.noreply.github.com"
+    "email": "6962246+djdarcy@users.noreply.github.com"
   }
 }

@@ -3,16 +3,32 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "Claude-Code-Infinite-Perfect-Context"
+name = "claude-code-infinite-perfect-context"
 dynamic = ["version"]
-description = "A new project created from git-repokit-template"
+description = "Reverse compaction for Claude Code: search past conversation turns and auto-fork into them with full pre-compaction fidelity."
 readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
 requires-python = ">=3.10"
 authors = [
-    {name = "djdarcy", email = "djdarcy@users.noreply.github.com"},
+    {name = "djdarcy", email = "6962246+djdarcy@users.noreply.github.com"},
 ]
-keywords = []
+keywords = [
+    "claude",
+    "claude-code",
+    "claude-code-plugin",
+    "conversation",
+    "session",
+    "history",
+    "rewind",
+    "fork",
+    "compaction",
+    "reverse-compaction",
+    "transcript",
+    "cli",
+    "developer-tools",
+    "infinite-context",
+    "dazzlecmd",
+]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Environment :: Console",
@@ -24,10 +40,14 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Utilities",
 ]
 
-dependencies = []
+dependencies = [
+    "dazzlecmd-lib>=0.1.0",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -41,24 +61,25 @@ Repository = "https://github.com/DazzleML/Claude-Code-Infinite-Perfect-Context"
 Issues = "https://github.com/DazzleML/Claude-Code-Infinite-Perfect-Context/issues"
 
 [project.scripts]
-Claude-Code-Infinite-Perfect-Context = "Claude_Code_Infinite_Perfect_Context.cli:main"
+ccipc = "ccipc.cli:main"
+claude-code-infinite-perfect-context = "ccipc.cli:main"
 
 [tool.setuptools.dynamic]
-version = {attr = "Claude_Code_Infinite_Perfect_Context._version.PIP_VERSION"}
+version = {attr = "ccipc_lib._version.PIP_VERSION"}
 
 [tool.setuptools.packages.find]
-where = ["."]
-include = ["Claude_Code_Infinite_Perfect_Context", "Claude_Code_Infinite_Perfect_Context.*"]
+where = ["src"]
+include = ["ccipc*", "ccipc_lib*"]
+
+[tool.repokit-common]
+version-source = "src/ccipc_lib/_version.py"
+changelog = "CHANGELOG.md"
+repo-url = "https://github.com/DazzleML/Claude-Code-Infinite-Perfect-Context"
+tag-prefix = "v"
+private-patterns = ["private/", "local/", ".env"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = "test_*.py"
 python_functions = "test_*"
 python_classes = "Test*"
-
-[tool.repokit-common]
-version-source = "Claude_Code_Infinite_Perfect_Context/_version.py"
-changelog = "CHANGELOG.md"
-repo-url = "https://github.com/DazzleML/Claude-Code-Infinite-Perfect-Context"
-tag-prefix = "v"
-private-patterns = ["private/", "local/", ".env"]

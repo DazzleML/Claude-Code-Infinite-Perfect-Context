@@ -1,6 +1,6 @@
-"""Tests for version module."""
+"""Tests for the canonical version module (src/ccipc_lib/_version.py)."""
 
-from Claude_Code_Infinite_Perfect_Context._version import (
+from ccipc_lib._version import (
     MAJOR, MINOR, PATCH, PHASE, PROJECT_PHASE,
     get_version, get_base_version, get_display_version, get_pip_version,
     __app_name__,
@@ -18,7 +18,7 @@ def test_version_components():
 
 
 def test_phase_valid():
-    """PHASE is empty string (stable release) or a string like 'alpha', 'beta', 'rc1'."""
+    """PHASE is empty string (stable) or a string like 'alpha', 'beta', 'rc1'."""
     assert isinstance(PHASE, str)
 
 
@@ -48,3 +48,20 @@ def test_pip_version_pep440():
         assert any(c.isalpha() for c in pip_v.split(".")[-1])
     else:
         assert all(c.isdigit() or c == "." for c in pip_v)
+
+
+def test_ccipc_re_export():
+    """The ccipc package should re-export the same version data as ccipc_lib."""
+    from ccipc._version import (
+        __version__ as ccipc_version,
+        __app_name__ as ccipc_app_name,
+        PIP_VERSION as ccipc_pip,
+    )
+    from ccipc_lib._version import (
+        __version__ as ccipc_lib_version,
+        __app_name__ as ccipc_lib_app_name,
+        PIP_VERSION as ccipc_lib_pip,
+    )
+    assert ccipc_version == ccipc_lib_version
+    assert ccipc_app_name == ccipc_lib_app_name
+    assert ccipc_pip == ccipc_lib_pip

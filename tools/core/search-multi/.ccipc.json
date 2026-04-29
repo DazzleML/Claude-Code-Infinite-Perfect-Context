@@ -1,0 +1,18 @@
+{
+    "name": "search-multi",
+    "version": "0.1.0",
+    "description": "Multi-JSONL full-text search across stored Claude Code session transcripts. Emits ranked (session_id, msg_uuid, snippet) records as JSONL on stdout, suitable for piping into ccipc find-boundary or ccipc cassette.",
+    "namespace": "core",
+    "language": "python",
+    "platform": "any",
+    "runtime": {
+        "type": "python",
+        "entry_point": "main",
+        "script_path": "search_multi.py"
+    },
+    "pass_through": false,
+    "taxonomy": {
+        "category": "ccipc-search",
+        "tags": ["search", "transcript", "jsonl", "multi-file"]
+    }
+}

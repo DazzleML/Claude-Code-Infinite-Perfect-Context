@@ -1,0 +1,8 @@
+{
+    "name": "core",
+    "description": "Core ccipc tools: multi-JSONL search, git-history fetch, turn-boundary detection, cassette assembly, and hydration. Together they form the reverse-compaction pipeline.",
+    "version": "0.1.0",
+    "tools": [
+        "core:search-multi"
+    ]
+}

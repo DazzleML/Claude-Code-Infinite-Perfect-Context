@@ -19,13 +19,13 @@ Version levels:
 MAJOR = 0
 MINOR = 1
 PATCH = 0
-PHASE = ""  # Per-MINOR feature set: "" (stable), "alpha", "beta", "rc1", etc.
+PHASE = ""  # Per-MINOR feature set: None, "alpha", "beta", "rc1", etc.
 
 # Project-level phase (independent of version phase)
-PROJECT_PHASE = ""  # "prealpha", "alpha", "beta", "stable", or ""
+PROJECT_PHASE = "prealpha"  # "prealpha", "alpha", "beta", "stable", or ""
 
 # Auto-updated by git hooks - do not edit manually
-__version__ = "0.1.0"
+__version__ = "0.1.0_main_5-20260428-5fefd50a"
 __app_name__ = "Claude-Code-Infinite-Perfect-Context"
 
 
