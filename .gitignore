@@ -162,3 +162,7 @@ test_runs/
 revisions/
 private/claude/
 private/notes/
+
+# Project-scoped Claude Code settings (permissions, hooks)
+# Lives in the private repo, not public history.
+.claude/

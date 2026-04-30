@@ -17,10 +17,34 @@ and shared helpers live in src/ccipc_lib/.
 from __future__ import annotations
 
 import os
+import shutil
 import sys
 
 from ccipc_lib._version import DISPLAY_VERSION, __version__
 from dazzlecmd_lib import AggregatorEngine
+
+_NAME_FIELD_WIDTH = 16
+_LINE_PREFIX_WIDTH = 2 + _NAME_FIELD_WIDTH + 2  # "  {name:<16}  "
+_DESC_MIN_WIDTH = 30
+_DESC_FALLBACK_WIDTH = 56  # used when terminal size detection fails
+
+
+def _available_desc_width() -> int:
+    """Compute how many columns are available for the description field.
+
+    Uses the actual terminal width when detectable, falls back to a
+    conservative 80-col assumption when stdout is not a TTY (piped help,
+    CI logs, etc.). Never returns less than _DESC_MIN_WIDTH so very
+    narrow terminals still produce readable output.
+    """
+    try:
+        cols = shutil.get_terminal_size((80, 24)).columns
+    except (OSError, ValueError):
+        cols = 80
+    desc = cols - _LINE_PREFIX_WIDTH - 1  # -1 for safety against wrap
+    if desc < _DESC_MIN_WIDTH:
+        return _DESC_MIN_WIDTH
+    return desc
 
 
 def _build_ccipc_help(projects):
@@ -48,6 +72,7 @@ def _build_ccipc_help(projects):
 
     # Discovered tools, grouped by kit/namespace.
     if projects:
+        max_desc = _available_desc_width()
         namespaces = {}
         for project in projects:
             ns = project.get("namespace", "other")
@@ -58,13 +83,12 @@ def _build_ccipc_help(projects):
             for project in sorted(namespaces[ns], key=lambda p: p["name"]):
                 name = project["name"]
                 desc = project.get("description", "")
-                # First sentence only, truncated for the table.
+                # First sentence only, truncated to fit the terminal width.
                 if ". " in desc:
                     desc = desc[:desc.index(". ") + 1]
-                max_desc = 56
                 if len(desc) > max_desc:
                     desc = desc[:max_desc - 3] + "..."
-                lines.append(f"  {name:<16}  {desc}")
+                lines.append(f"  {name:<{_NAME_FIELD_WIDTH}}  {desc}")
 
     lines.append("")
     lines.append("Run 'ccipc <tool> --help' for tool-specific options.")

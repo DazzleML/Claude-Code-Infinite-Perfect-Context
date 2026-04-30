@@ -45,8 +45,10 @@ def main(argv=None):
     )
     parser.add_argument(
         "--type", dest="msg_type",
-        choices=["bash", "user", "assistant", "tool_use", "tool_result"],
-        help="Restrict matches to a single message type.",
+        choices=["user", "assistant", "system", "attachment"],
+        help="Restrict matches to a single TranscriptMessage type. "
+             "tool_use/tool_result live inside assistant `message.content`, "
+             "not at the top level (per Claude Code's logs.ts).",
     )
 
     if argv is None:

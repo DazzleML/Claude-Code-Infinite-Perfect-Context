@@ -25,7 +25,7 @@ PHASE = ""  # Per-MINOR feature set: None, "alpha", "beta", "rc1", etc.
 PROJECT_PHASE = "prealpha"  # "prealpha", "alpha", "beta", "stable", or ""
 
 # Auto-updated by git hooks - do not edit manually
-__version__ = "0.1.0_main_5-20260428-5fefd50a"
+__version__ = "0.1.0_main_6-20260429-5e03bfc2"
 __app_name__ = "Claude-Code-Infinite-Perfect-Context"
 
 

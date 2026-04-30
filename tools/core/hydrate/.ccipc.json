@@ -1,0 +1,18 @@
+{
+    "name": "hydrate",
+    "version": "0.1.0",
+    "description": "Install a cassette under ~/.claude/projects/<slug>/<new-uuid>.jsonl and run `claude --resume <new-uuid>` to land in the forked session. Enforces: cost-preview gate (TTY interactive OR --yes with CCIPC_ALLOW_AUTOHYDRATE=1 env), plan-overrun rejection (exit 5 unless --force-plan-overrun), CC version compat (exit 8 unless --force-cross-version-fork), pipeline fan-in (exit 7 if >1 stdin record), target collision (exit 6 on UUID clash). Atomic install via .tmp + os.replace.",
+    "namespace": "core",
+    "language": "python",
+    "platform": "any",
+    "runtime": {
+        "type": "python",
+        "entry_point": "main",
+        "script_path": "hydrate.py"
+    },
+    "pass_through": false,
+    "taxonomy": {
+        "category": "ccipc-pipeline",
+        "tags": ["hydrate", "install", "fork", "claude-resume"]
+    }
+}

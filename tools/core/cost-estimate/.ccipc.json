@@ -1,0 +1,18 @@
+{
+    "name": "cost-estimate",
+    "version": "0.1.0",
+    "description": "Estimate the token + dollar cost of a cassette and surface plan-aware warnings (max5/max20/api/1m). Always exits 0; warnings go to stderr. The plan-aware view (% of 5h budget consumed) is shown FIRST, before the raw USD cost, since plan users care about quota not API price. Pluggable as a pipeline middle stage or callable standalone via --cassette PATH.",
+    "namespace": "core",
+    "language": "python",
+    "platform": "any",
+    "runtime": {
+        "type": "python",
+        "entry_point": "main",
+        "script_path": "cost_estimate.py"
+    },
+    "pass_through": false,
+    "taxonomy": {
+        "category": "ccipc-pipeline",
+        "tags": ["cost", "tokens", "plan-aware", "warnings"]
+    }
+}

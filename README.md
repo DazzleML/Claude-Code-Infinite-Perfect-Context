@@ -4,7 +4,6 @@
 
 [![PyPI](https://img.shields.io/pypi/v/claude-code-infinite-perfect-context?color=green)](https://pypi.org/project/claude-code-infinite-perfect-context/)
 [![Release Date](https://img.shields.io/github/release-date/DazzleML/Claude-Code-Infinite-Perfect-Context?color=green)](https://github.com/DazzleML/Claude-Code-Infinite-Perfect-Context/releases)
-[![Status: Pre-Alpha](https://img.shields.io/badge/status-pre--alpha-orange)](https://github.com/DazzleML/Claude-Code-Infinite-Perfect-Context/issues/1)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: GPL v3](https://img.shields.io/badge/license-GPL--3.0--or--later-green.svg)](LICENSE)
 [![Installs](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/djdarcy/d0f7a19fcf65519b1a422e03a5c23fb8/raw/installs.json)](https://dazzleml.github.io/Claude-Code-Infinite-Perfect-Context/stats/#installs)
@@ -17,7 +16,7 @@ See the [Roadmap](https://github.com/DazzleML/Claude-Code-Infinite-Perfect-Conte
 
 ## What is this?
 
-Claude Code's compaction summarizes the past and projects forward in time. While this is useful, it also lossy and slowly Claude's understanding degrades. `ccipc` inverts that direction: store the present and travel back to a chosen past moment, optionally bringing forward a summary of where you ended up. Two modes:
+Claude Code's compaction summarizes the past and projects forward in time. While this is useful, it also lossy and Claude's understanding slowly degrades. `ccipc` inverts that direction: store the present and travel back to a chosen past moment, optionally bringing forward a summary of where you ended up. Two modes:
 
 - **Mode A -- Verbatim past**: hydrate a session into the exact pre-compaction state at turn N.
 - **Mode B -- Past + summarized present**: same as Mode A, with a synthesized summary of the present appended after the historical prefix.

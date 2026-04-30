@@ -1,8 +1,12 @@
 {
     "name": "core",
-    "description": "Core ccipc tools: multi-JSONL search, git-history fetch, turn-boundary detection, cassette assembly, and hydration. Together they form the reverse-compaction pipeline.",
+    "description": "Core ccipc tools: single-session search, turn-boundary detection, cassette assembly, plan-aware cost estimation, and hydration. Together they form the reverse-compaction pipeline.",
     "version": "0.1.0",
     "tools": [
-        "core:search-multi"
+        "core:search",
+        "core:find-boundary",
+        "core:cassette",
+        "core:cost-estimate",
+        "core:hydrate"
     ]
 }

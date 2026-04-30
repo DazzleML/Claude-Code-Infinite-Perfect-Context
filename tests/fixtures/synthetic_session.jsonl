@@ -1,0 +1,13 @@
+{"type":"user","uuid":"u-001","parentUuid":null,"isSidechain":false,"cwd":"/c/test/synthetic","message":{"role":"user","content":"hello world"}}
+{"type":"assistant","uuid":"a-001","parentUuid":"u-001","isSidechain":false,"message":{"role":"assistant","content":[{"type":"text","text":"Hi! How can I help?"}]}}
+{"type":"user","uuid":"u-002","parentUuid":"a-001","isSidechain":false,"cwd":"/c/test/synthetic","message":{"role":"user","content":"tell me about reverse compaction"}}
+{"type":"assistant","uuid":"a-002","parentUuid":"u-002","isSidechain":false,"message":{"role":"assistant","content":[{"type":"text","text":"Reverse compaction is a technique to recover lost context."}]}}
+{"type":"user","uuid":"u-003","parentUuid":"a-002","isSidechain":false,"cwd":"/c/test/synthetic","message":{"role":"user","content":"the magic phrase NEEDLE-ALPHA appears here"}}
+{"type":"assistant","uuid":"a-003","parentUuid":"u-003","isSidechain":false,"message":{"role":"assistant","content":[{"type":"text","text":"I see the magic phrase."}]}}
+{"type":"user","uuid":"u-side-001","parentUuid":"a-003","isSidechain":true,"cwd":"/c/test/synthetic","message":{"role":"user","content":"sidechain inner question"}}
+{"type":"assistant","uuid":"a-side-001","parentUuid":"u-side-001","isSidechain":true,"message":{"role":"assistant","content":[{"type":"text","text":"sidechain inner answer"}]}}
+{"type":"SystemCompactBoundaryMessage","uuid":"compact-001","parentUuid":"a-003","isSidechain":false,"message":{"role":"system","content":"--- compaction boundary ---"}}
+{"type":"user","uuid":"u-004","parentUuid":"compact-001","isSidechain":false,"cwd":"/c/test/synthetic","message":{"role":"user","content":"continuing after compact, looking for NEEDLE-BETA"}}
+{"type":"assistant","uuid":"a-004","parentUuid":"u-004","isSidechain":false,"message":{"role":"assistant","content":[{"type":"text","text":"Found NEEDLE-BETA in the post-compact stretch."}]}}
+{"type":"user","uuid":"u-005","parentUuid":"a-004","isSidechain":false,"cwd":"/c/test/synthetic","message":{"role":"user","content":"thanks!"}}
+{"type":"assistant","uuid":"a-005","parentUuid":"u-005","isSidechain":false,"message":{"role":"assistant","content":[{"type":"text","text":"You're welcome."}]}}

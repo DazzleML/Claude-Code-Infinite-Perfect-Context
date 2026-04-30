@@ -1,0 +1,18 @@
+{
+    "name": "find-boundary",
+    "version": "0.1.0",
+    "description": "Walk backward from a search hit to the nearest user-turn boundary, applying a plan-aware token-headroom rule. Reads SearchHit records on stdin and emits enriched BoundaryHit records on stdout. SystemCompactBoundaryMessage lines are hard stops by default (--include-pre-compact opts in to crossing them).",
+    "namespace": "core",
+    "language": "python",
+    "platform": "any",
+    "runtime": {
+        "type": "python",
+        "entry_point": "main",
+        "script_path": "find_boundary.py"
+    },
+    "pass_through": false,
+    "taxonomy": {
+        "category": "ccipc-pipeline",
+        "tags": ["boundary", "turn", "jsonl", "headroom"]
+    }
+}
